@@ -1,0 +1,13 @@
+EXAMEN:
+Pregunta 1:
+Crea la BD en MySQL usando phpmyadmin de Xampp, ¿el script es correcto completo?, ¿has tenido que hacer algún cambio para que funcionara?, ¿qué cambio?, ¿por qué?.
+
+Error en la línea:
+	DROP DATABASE examen;
+Cuando uno crea una base de datos por primera vez, está demás esta línea. Porque "DROP DATABASE" sirve para borrar un base de datos existente, y siendo la primera vez, la base de datos "examen" no existe aún.
+Se debe crear empezando con "CREATE DATABASE ....;"
+
+Error en la línea:
+	INSERT INTO alumnos VALUES(NULL, "Ricardo García", "3333333C", -7.02);
+El "-7.02" es un dato incorrecto, pues la variable "nota" solo admite un valor superior a "0.0". Tal como lo declara la condición ">" en la línea:" nota DECIMAL(4,2) CHECK (nota > 0.0),".
+Se debe ingresar un valor mayor a "0.0".
